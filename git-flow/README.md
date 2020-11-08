@@ -28,8 +28,9 @@
 * 修复完毕后合并到develop/master分支并推送，做标签记录；
 * 所有hotfix分支的修改会进入到下一个release；
 * 临时分支，补丁修复上线后可以删除。
- 
 
+![git-flow工作流程图](git-flow.png)
+ 
 **主要工作流程：**
 
 * 初始化项目为git flow，默认创建master分支，然后从master拉取第一个develop分支；
