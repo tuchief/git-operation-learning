@@ -61,12 +61,7 @@ git flow新增分支  git flow feature start 1.1.0
 git flow结束分支 git flow feature finish 1.1.0
 ``` 
 
-**git和git flow实际场景：**
-
-1、查看本地代码是否有变化：git status    
-清除本地代码的变更：git checkout -- src  
-      
-2、项目提测，结束feature分支，拉取release分支  
+**git flow代码场景：**
 
 ```
 a. 创建develop分支
