@@ -69,22 +69,76 @@ git flow结束分支 git flow feature finish 1.1.0
 2、项目提测，结束feature分支，拉取release分支  
 
 ```
-// 初始化git flow  
-git flow init  
+a. 创建develop分支
 
-// 结束feature/1.0.0分支，代码将自动合并到dev分支（确保本地的dev分支和远程dev分支已建立连接），此后会自动切换到dev分支
-git flow feature finish 1.0.0
- 
-// dev分支代码推到远程
+git branch develop
+git push -u origin develop 
+
+b. 开始新Feature开发
+
+git checkout -b some-feature develop
+# Optionally, push branch to origin:
+git push -u origin some-feature    
+
+# 做一些改动    
+git status
+git add some-file
+git commit 
+
+c. 完成Feature
+
+git pull origin develop
+git checkout develop
+git merge --no-ff some-feature
+git push origin develop
+
+git branch -d some-feature
+
+# If you pushed branch to origin:
+git push origin --delete some-feature   
+
+d. 开始Relase
+
+git checkout -b release-0.1.0 develop
+
+# Optional: Bump version number, commit
+# Prepare release, commit
+
+e. 完成Release
+
+git checkout master
+git merge --no-ff release-0.1.0
 git push
- 
-// 创建新的release分支，此后自动切换到release分支
-git flow release start 1.0.0
- 
-// 本地代码推向远程（会让你建立连接）
+
+git checkout develop
+git merge --no-ff release-0.1.0
 git push
- 
-// 本地和远程release分支建立连接
-git push --set-upstream origin release/1.0.0
+
+git branch -d release-0.1.0
+
+# If you pushed branch to origin:
+git push origin --delete release-0.1.0   
+
+git tag -a v0.1.0 master
+git push --tags
+
+f. 开始Hotfix
+
+git checkout -b hotfix-0.1.1 master    
+
+g. 完成Hotfix
+
+git checkout master
+git merge --no-ff hotfix-0.1.1
+git push
+
+git checkout develop
+git merge --no-ff hotfix-0.1.1
+git push
+
+git branch -d hotfix-0.1.1
+
+git tag -a v0.1.1 master
+git push --tags
 ```
  
