@@ -61,12 +61,12 @@ git flow结束分支 git flow feature finish 1.1.0
 
 **git和git flow实际场景：**
 
-1、查看本地代码是否有变化：git status
-清除本地代码的变更：git checkout -- src
+1、查看本地代码是否有变化：git status    
+清除本地代码的变更：git checkout -- src  
       
-2、项目提测，结束feature分支，拉取release分支：
-// 初始化git flow
-git flow init
+2、项目提测，结束feature分支，拉取release分支  
+// 初始化git flow  
+git flow init  
 
 ```
 // 结束feature/1.0.0分支，代码将自动合并到dev分支（确保本地的dev分支和远程dev分支已建立连接），此后会自动切换到dev分支
