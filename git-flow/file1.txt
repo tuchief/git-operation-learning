@@ -1,4 +1,8 @@
 first commit
 second commit
+<<<<<<< HEAD
 edit by release branch
 edit by hotfix branch
+=======
+three commit, feature-1003
+>>>>>>> feature/feature-1003
