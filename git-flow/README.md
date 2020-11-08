@@ -1,3 +1,5 @@
+**推荐阅读：** [A Successful Git Branching Model](https://nvie.com/posts/a-successful-git-branching-model/)
+
 **git flow主要分支**
 
 **master**：永远处于production-ready状态
